@@ -1,0 +1,9 @@
+services:
+  Twenty5Carat\ApiLoggerBundle\Formatter\HttpMessageFormatter: ~
+
+  Twenty5Carat\ApiLoggerBundle\Handler\LogHandler:
+    arguments:
+      - '@Twenty5Carat\ApiLoggerBundle\Formatter\HttpMessageFormatter'
+      - '@logger'
+    tags:
+      - { name: monolog.logger, channel: api_logger }

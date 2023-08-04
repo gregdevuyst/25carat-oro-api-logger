@@ -1,0 +1,58 @@
+{
+  "name": "25carat/oro-api-logger",
+  "description": "This bundle will allow you to log all api requests and responses",
+  "type": "symfony-bundle",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "25 Carat",
+      "email": "info@25carat.be",
+      "homepage": "https://www.25carat.be/"
+    }
+  ],
+  "require": {
+    "php": "^8.1",
+    "oro/platform": "^5.0"
+  },
+  "require-dev": {
+    "phpmd/phpmd": "^2.12",
+    "phpro/grumphp-shim": "^1.11",
+    "squizlabs/php_codesniffer": "^3.6"
+  },
+  "autoload": {
+    "psr-4": {
+      "Twenty5Carat\\ApiLoggerBundle\\": ""
+    }
+  },
+  "repositories": {
+    "composer": {
+      "type": "composer",
+      "url": "https://packagist.orocrm.com"
+    }
+  },
+  "config": {
+    "sort-packages": true,
+    "allow-plugins": {
+      "phpro/grumphp-shim": true,
+      "symfony/flex": true,
+      "php-http/discovery": false,
+      "symfony/runtime": false
+    },
+    "platform": {
+      "ext-ctype": "8.1",
+      "ext-dom": "8.1",
+      "ext-gd": "8.1",
+      "ext-iconv": "8.1",
+      "ext-intl": "8.1",
+      "ext-json": "8.1",
+      "ext-mbstring": "8.1",
+      "ext-openssl": "8.1",
+      "ext-pcntl": "8.1",
+      "ext-pdo": "8.1",
+      "ext-simplexml": "8.1",
+      "ext-tokenizer": "8.1",
+      "ext-xml": "8.1",
+      "ext-zip": "8.1"
+    }
+  }
+}

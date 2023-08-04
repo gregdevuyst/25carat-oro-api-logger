@@ -1,0 +1,9 @@
+## auto-loaded in PlatformBundle by exact file name "app.yml"; used for application level configuration
+monolog:
+  handlers:
+    api_logger:
+      type: stream
+      path: '%kernel.logs_dir%/api-logger-%kernel.environment%.log'
+      level: '%twenty5carat.api_logger.level%'
+      channels: ['api_logger']
+  channels: ['api_logger']

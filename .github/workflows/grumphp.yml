@@ -1,0 +1,28 @@
+on: [push]
+
+jobs:
+  build:
+    name: Running GrumPHP
+    runs-on: ubuntu-latest
+    env:
+      extensions: ''
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.1'
+          extensions: ${{ env.extensions }}
+          tools: composer
+      - name: Get Composer Cache Directory
+        id: composer_cache
+        run: echo "::set-output name=dir::$(composer config cache-files-dir)"
+      - name: Cache dependencies
+        uses: actions/cache@v2
+        with:
+          path: ${{ steps.composer_cache.outputs.dir }}
+          key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.json') }}
+          restore-keys: ${{ runner.os }}-composer-
+      - name: Install dependencies
+        run: composer install --prefer-dist  --no-scripts
+      - run: ./vendor/bin/grumphp run

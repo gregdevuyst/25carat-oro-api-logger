@@ -1,0 +1,6 @@
+services:
+  Twenty5Carat\ApiLoggerBundle\Controller\LogController:
+    decorates: Oro\Bundle\ApiBundle\Controller\RestApiController
+    arguments:
+      - '@.inner'
+      - '@Twenty5Carat\ApiLoggerBundle\Handler\LogHandler'
