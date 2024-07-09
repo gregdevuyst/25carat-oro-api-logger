@@ -7,3 +7,6 @@
 - Formatter to convert the request and response data to a string for logging
 - Separate logging channel for api requests
 - Configuration parameter to manage the log level of the logging channel
+## [2.0.0] - 2023-06-27
+### Modified
+- Compatible with Oro 6.0
